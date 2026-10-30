@@ -1,20 +1,30 @@
-# 🛡️ Mini SOC Project - Built on Termux (Android)
+# 🛡️ SOC Project - Security Operations Center
 
-Built a Flask server with Rate-Limiting protection, implemented a real-time log analyzer to detect Brute Force attacks, a live SOC monitor, and a dashboard. Successfully simulated and detected an attack from 127.0.0.1 with 42% blocked requests (429) + Auto-Block system (403).
+A mini SOC (Security Operations Center) built in Python to monitor logs, detect suspicious activity, and generate incident reports. Built for learning Blue Team / SOC Analyst skills.
 
-## Features
-- Flask Server with Rate Limiting
-- Auto-Block IP after Brute Force (403)
-- Real-time Monitor with Alerts
-- SOC Dashboard & Incident Report
-- Brute Force Detection
+## 🚀 Features
 
-## Files
-- app.py - Server + Protection
-- monitor.py - Live Monitor
-- log_filter.py - Analyzer
-- dashboard.py - Dashboard
+- **Real-time Log Monitoring** - Monitor `access.log` continuously
+- **Suspicious IP Detection** - Detect brute-force, scanning & anomalies
+- **Log Filtering** - Filter logs by IP, status code, and time
+- **Web Dashboard** - Visualize threats with `dashboard.py` + `index.html`
+- **Incident Reporting** - Auto-generate `incident_report.txt`
 
-## Demo
-Attack: `for i in 1..8; do curl -X POST /login; done`
-Result: 5x Login OK -> 1x 429 BLOCKED -> 2x 403 You are BLOCKED by SOC
+## 📁 Project Structure
+
+| File | Description |
+| --- | --- |
+| `monitor.py` | Main monitoring engine |
+| `log_filter.py` | Filter and parse logs |
+| `app.py` | Web application entry point |
+| `dashboard.py` | Dashboard logic & stats |
+| `index.html` | Frontend dashboard UI |
+| `access.log` | Sample web server logs |
+| `incident_report.txt` | Example incident report |
+
+## 🛠️ Installation
+
+```bash
+git clone https://github.com/ghbamdycbug-cpu/soc-project.git
+cd soc-project
+pip install flask
