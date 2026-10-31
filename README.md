@@ -1,72 +1,22 @@
-# 🛡️ SOC Project - Cybersecurity Portfolio
-### By ghbamdycbug-cpu
+# SOC Project - Security Operations Center Tools
 
-Welcome to my cybersecurity lab! Here I build real security tools using Python.
+A collection of cybersecurity tools built by me in Python on Termux.
+Each tool solves a real problem faced by a SOC Analyst.
 
----
+## Tools
 
-## 📁 Projects
+| Tool | Description |
+| :--- | :--- |
+| malware_checker.py | V2 - Scan single file or full folder with MD5/SHA256 + auto report |
+| phishing_detector.py | Detect phishing URLs |
+| port_scanner.py | Scan open ports |
+| password_checker.py | Check password strength |
+| log_filter.py | Filter and analyze system logs |
+| monitor.py | System monitoring |
+| incident_report.txt | Incident response report template |
 
-### 1. 🔍 SOC Monitor - `monitor.py`
-Real-time security monitoring system.
-- Detects Brute Force attacks
-- Detects Port Scanning
-- Detects Suspicious IPs
-- Sends alerts with severity levels
+## How to Use
 
-**Run:** `python3 monitor.py`
-
-### 2. 🌐 Port Scanner - `port_scanner.py`
-Fast port scanner like Nmap, built from scratch!
-- Scans 10 common ports (SSH, HTTP, FTP, etc.)
-- Detects open ports and services
-- Warns about SSH Brute Force risk
-- Shows target IP resolution
-
-**Run:** `python3 port_scanner.py`
-
-### 3. 🔐 Password Checker - COMING SOON...
-
----
-
-## 🛠️ Skills Used
-- Python 3
-- Socket Programming
-- Network Security
-- Threat Detection
-- Git & GitHub
-
----
-
-## 👨‍💻 Author
-**ghbamdycbug-cpu** - Aspiring SOC Analyst / Penetration Tester
-
-### 3. 🔐 Password Strength Checker
-**File:** `password_checker.py`
-Checks password strength and crack time.
-- Scores 0 to 85
-- Detects leaked passwords like 123456
-- Estimates crack time
-
-**Example:**
-- 123456 -> 0/85, 0.00 seconds
-- MyPass@2026!Strong -> 85/85, 10 Quintillion years
-
-**Run:**
 ```bash
-python3 password_checker.py
-
-### 4. 🎣 Phishing URL Detector
-**File:** `phishing_detector.py`
-Detects fake phishing links that steal passwords.
-- Detects typo-squatting like goggle.com, facebok.com, paypa1.com
-- Detects IP, @ trick, URL shortener, no HTTPS
-- Risk Score 0 to 100
-
-**Example:**
-- paypa1.com -> 55/100 PHISHING!
-- facebok.com/login/verify -> 65/100 PHISHING!
-
-**Run:**
-```bash
-python3 phishing_detector.py
+python3 malware_checker.py
+# Then type . to scan current folder
