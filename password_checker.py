@@ -1,98 +1,65 @@
 import re
-import string
-import time
+import getpass
 
-print("="*50)
-print("🔐 PASSWORD STRENGTH CHECKER v1.0")
-print("="*50)
-
-password = input("\nEnter password to check: ")
-
-score = 0
-feedback = []
-
-# 1. Length check
-if len(password) >= 12:
-    score += 25
-    feedback.append("✅ Length 12+ : Excellent!")
-elif len(password) >= 8:
-    score += 15
-    feedback.append("⚠️ Length 8-11 : OK, but make it 12+")
-else:
-    feedback.append("❌ Too short! Use 12+ characters")
-
-# 2. Uppercase
-if re.search(r'[A-Z]', password):
-    score += 15
-    feedback.append("✅ Has UPPERCASE letters")
-else:
-    feedback.append("❌ Add UPPERCASE letters (A-Z)")
-
-# 3. Lowercase
-if re.search(r'[a-z]', password):
-    score += 15
-    feedback.append("✅ Has lowercase letters")
-else:
-    feedback.append("❌ Add lowercase letters (a-z)")
-
-# 4. Numbers
-if re.search(r'[0-9]', password):
-    score += 15
-    feedback.append("✅ Has numbers")
-else:
-    feedback.append("❌ Add numbers (0-9)")
-
-# 5. Special chars
-if re.search(r'[!@#$%^&*(),.?":{}|<>]', password):
-    score += 15
-    feedback.append("✅ Has special characters (!@#...)")
-else:
-    feedback.append("❌ Add special characters (!@#$%)")
-
-# 6. Common passwords check
-common = ["123456", "password", "123456789", "qwerty", "admin", "12345", "letmein"]
-if password.lower() in common:
+def check_password(password):
+    print("\n🔍 جاري فحص كلمة السر...")
     score = 0
-    feedback.append("🚨 DANGER: This is in TOP leaked passwords list!")
+    tips = []
 
-# 7. Estimate crack time
-charset = 0
-if re.search(r'[a-z]', password): charset += 26
-if re.search(r'[A-Z]', password): charset += 26
-if re.search(r'[0-9]', password): charset += 10
-if re.search(r'[!@#$%^&*(),.?":{}|<>]', password): charset += 32
-
-if charset > 0:
-    combinations = charset ** len(password)
-    # Hacker tries 1 Billion per second
-    seconds = combinations / 1000000000
-    if seconds < 60:
-        crack_time = f"{seconds:.2f} seconds"
-    elif seconds < 3600:
-        crack_time = f"{seconds/60:.1f} minutes"
-    elif seconds < 86400:
-        crack_time = f"{seconds/3600:.1f} hours"
-    elif seconds < 31536000:
-        crack_time = f"{seconds/86400:.1f} days"
+    # الطول
+    if len(password) >= 12:
+        score += 30
+        print("✅ الطول ممتاز (12+) +30")
+    elif len(password) >= 8:
+        score += 15
+        print("⚠️ الطول مقبول (8+) +15")
+        tips.append("خليها 12 حرف على الأقل")
     else:
-        crack_time = f"{seconds/31536000:.1f} years"
-else:
-    crack_time = "Instantly"
+        print("❌ قصيرة جدا! +0")
+        tips.append("كلمة السر قصيرة مرة، زودها")
 
-print("\n" + "-"*50)
-for f in feedback:
-    print(f)
+    # حروف كبيرة
+    if re.search(r"[A-Z]", password):
+        score += 15
+        print("✅ فيها حرف كبير +15")
+    else:
+        tips.append("ضيف حرف كبير مثل A, B, C")
 
-print("\n" + "="*50)
-print(f"🎯 SCORE: {score}/85")
-if score >= 80:
-    print("🟢 VERY STRONG - Hacker proof!")
-elif score >= 60:
-    print("🟡 GOOD - But can be stronger")
-elif score >= 30:
-    print("🟠 WEAK - Easy to crack!")
-else:
-    print("🔴 VERY WEAK - Change it NOW!")
+    # حروف صغيرة
+    if re.search(r"[a-z]", password):
+        score += 15
+        print("✅ فيها حرف صغير +15")
+    else:
+        tips.append("ضيف حرف صغير")
 
-print(f"⏱️  Time to crack (1B tries/sec): {crack_time}")
-print("="*50)
+    # أرقام
+    if re.search(r"[0-9]", password):
+        score += 15
+        print("✅ فيها أرقام +15")
+    else:
+        tips.append("ضيف أرقام")
+
+    # رموز
+    if re.search(r"[!@#$%^&*(),.?\":{}|<>]", password):
+        score += 25
+        print("✅ فيها رموز خاصة +25")
+    else:
+        tips.append("ضيف رمز مثل ! @ # $")
+
+    # النتيجة
+    print(f"\n📊 القوة: {score}/100")
+    if score >= 80:
+        print("🟢 قوية جدا! ممتازة يا هكر 💪")
+    elif score >= 50:
+        print("🟡 متوسطة، تحتاج تحسين")
+    else:
+        print("🔴 ضعيفة جدا! تتكسر بثواني!")
+
+    if tips:
+        print("\n💡 نصائح لتحسينها:")
+        for t in tips:
+            print(f"- {t}")
+
+if __name__ == "__main__":
+    pw = getpass.getpass("اكتب كلمة السر (ما بتظهر وانت تكتب - هذا أمان): ")
+    check_password(pw)
