@@ -55,3 +55,18 @@ Checks password strength and crack time.
 **Run:**
 ```bash
 python3 password_checker.py
+
+### 4. 🎣 Phishing URL Detector
+**File:** `phishing_detector.py`
+Detects fake phishing links that steal passwords.
+- Detects typo-squatting like goggle.com, facebok.com, paypa1.com
+- Detects IP, @ trick, URL shortener, no HTTPS
+- Risk Score 0 to 100
+
+**Example:**
+- paypa1.com -> 55/100 PHISHING!
+- facebok.com/login/verify -> 65/100 PHISHING!
+
+**Run:**
+```bash
+python3 phishing_detector.py
