@@ -40,3 +40,18 @@ Fast port scanner like Nmap, built from scratch!
 
 ## 👨‍💻 Author
 **ghbamdycbug-cpu** - Aspiring SOC Analyst / Penetration Tester
+
+### 3. 🔐 Password Strength Checker
+**File:** `password_checker.py`
+Checks password strength and crack time.
+- Scores 0 to 85
+- Detects leaked passwords like 123456
+- Estimates crack time
+
+**Example:**
+- 123456 -> 0/85, 0.00 seconds
+- MyPass@2026!Strong -> 85/85, 10 Quintillion years
+
+**Run:**
+```bash
+python3 password_checker.py
