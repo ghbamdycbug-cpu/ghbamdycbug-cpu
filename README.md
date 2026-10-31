@@ -1,20 +1,42 @@
-# 🛡️ SOC Monitor v2.0 - Real-Time Attack Detection
+# 🛡️ SOC Project - Cybersecurity Portfolio
+### By ghbamdycbug-cpu
 
-A Python-based Security Operations Center (SOC) monitor that detects web attacks in real-time from Apache logs.
+Welcome to my cybersecurity lab! Here I build real security tools using Python.
 
-## 🚀 Features
-- **SQL Injection Detection** - Detects `' OR 1=1`, `UNION SELECT`, etc.
-- **XSS Detection** - Detects `<script>`, `alert()`, etc.
-- **Brute Force Detection** - Detects 5+ requests from same IP in 10 seconds
-- **Auto Incident Report** - Saves all attacks to `incident_report.txt` with timestamp
+---
 
-## 🛠️ How to Run
-```bash
-python3 monitor.py
-## 📝 Example Output
-[ALERT] SQL Injection from 192.168.1.100
-[ALERT] XSS Attack from 192.168.1.100
-[ALERT] BRUTE FORCE from 10.0.0.5 - 6 requests
+## 📁 Projects
+
+### 1. 🔍 SOC Monitor - `monitor.py`
+Real-time security monitoring system.
+- Detects Brute Force attacks
+- Detects Port Scanning
+- Detects Suspicious IPs
+- Sends alerts with severity levels
+
+**Run:** `python3 monitor.py`
+
+### 2. 🌐 Port Scanner - `port_scanner.py`
+Fast port scanner like Nmap, built from scratch!
+- Scans 10 common ports (SSH, HTTP, FTP, etc.)
+- Detects open ports and services
+- Warns about SSH Brute Force risk
+- Shows target IP resolution
+
+**Run:** `python3 port_scanner.py`
+
+### 3. 🔐 Password Checker - COMING SOON...
+
+---
+
+## 🛠️ Skills Used
+- Python 3
+- Socket Programming
+- Network Security
+- Threat Detection
+- Git & GitHub
+
+---
 
 ## 👨‍💻 Author
-Built by ghbamdycbug-cpu as part of Cybersecurity Learning Journey
+**ghbamdycbug-cpu** - Aspiring SOC Analyst / Penetration Tester
