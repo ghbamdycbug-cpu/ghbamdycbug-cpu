@@ -1,22 +1,27 @@
-# SOC Project - Security Operations Center Tools
+# 🛡️ SOC-Project - Cyber Security Tools
 
-A collection of cybersecurity tools built by me in Python on Termux.
-Each tool solves a real problem faced by a SOC Analyst.
+My personal SOC Analyst toolkit - Built from scratch on Termux (Android)!
 
-## Tools
+## 🚀 Tools (6 Tools)
 
-| Tool | Description |
-| :--- | :--- |
-| malware_checker.py | V2 - Scan single file or full folder with MD5/SHA256 + auto report |
-| phishing_detector.py | Detect phishing URLs |
-| port_scanner.py | Scan open ports |
-| password_checker.py | Check password strength |
-| log_filter.py | Filter and analyze system logs |
-| monitor.py | System monitoring |
-| incident_report.txt | Incident response report template |
+| # | Tool | What it does |
+|---|------|--------------|
+| 1 | `log_analyzer.py` | Detects brute-force attacks from logs |
+| 2 | `port_scanner.py` | Scans open ports on a target |
+| 3 | `password_checker.py` | Checks password strength + HaveIBeenPwned |
+| 4 | `hash_cracker.py` | Cracks MD5 hashes with wordlist |
+| 5 | `phishing_detector.py` | Detects phishing URLs (IP, @, typo-squatting) |
+| 6 | `wifi_scanner.py` | Scans WiFi network for connected devices |
 
-## How to Use
+## 🔥 Featured Fix
 
+**Found & Fixed a Bug Myself:**
+- Before: `faceb00k.com` was detected as `SAFE (10/100)`
+- After: `faceb00k.com` detected as `PHISHING (60/100)` - TYPO-SQUATTING!
+
+## 🛠️ How to Run
 ```bash
-python3 malware_checker.py
-# Then type . to scan current folder
+python log_analyzer.py
+python port_scanner.py
+python phishing_detector.py
+python wifi_scanner.py
