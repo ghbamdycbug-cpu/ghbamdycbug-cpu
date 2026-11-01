@@ -1,8 +1,15 @@
-# Phishing URL Detector - SOC Analyst Project 4
-# Detects fake / malicious URLs
-
 import re
 from urllib.parse import urlparse
+
+LEGIT = ["google.com", "facebook.com", "instagram.com", "paypal.com", "amazon.com", "microsoft.com", "apple.com", "yahoo.com", "twitter.com", "github.com", "netflix.com"]
+
+def normalize(domain):
+    # نحول الحروف المزورة لحروف حقيقية عشان نكشف التقليد
+    # 0 -> o , 1 -> l , 3 -> e , 5 -> s , @ -> a , rn -> m
+    d = domain.lower()
+    d = d.replace("0", "o").replace("1", "l").replace("3", "e").replace("5", "s").replace("@", "a")
+    d = d.replace("rn", "m")
+    return d
 
 def check_url(url):
     print(f"\n[+] Checking: {url}")
@@ -10,94 +17,99 @@ def check_url(url):
     score = 0
     reasons = []
 
-    # Add http if missing
     if not url.startswith("http"):
         url = "http://" + url
 
     parsed = urlparse(url)
-    domain = parsed.netloc
+    domain = parsed.netloc.lower()
     full = url.lower()
 
-    # 1. Check IP instead of domain
-    if re.match(r"^\d+\.\d+\.\d+\.\d+", domain):
-        score += 30
-        reasons.append("Uses IP address instead of domain name")
-
-    # 2. Check @ symbol trick
-    if "@" in url:
-        score += 25
-        reasons.append("Contains @ - hides real domain")
-
-    # 3. Check too long URL
-    if len(url) > 75:
-        score += 15
-        reasons.append(f"Very long URL ({len(url)} chars)")
-
-    # 4. Check many subdomains
-    if domain.count(".") > 3:
-        score += 20
-        reasons.append(f"Too many subdomains ({domain.count('.')})")
-
-    # 5. Check no HTTPS
-    if not full.startswith("https"):
+    # 1. No HTTPS
+    if not url.startswith("https"):
         score += 10
         reasons.append("No HTTPS - Not Secure")
 
-    # 6. Check suspicious keywords
-    keywords = ["login", "verify", "secure", "account", "update", "free", "win", "bank"]
+    # 2. IP instead of domain
+    if re.match(r"^\d+\.\d+\.\d+\.\d+", domain):
+        score += 30
+        reasons.append("Uses IP instead of domain!")
+
+    # 3. @ in URL
+    if "@" in url:
+        score += 20
+        reasons.append("Has @ in URL - phishing trick!")
+
+    # 4. Suspicious keywords
+    keywords = ["login", "secure", "account", "update", "verify", "free"]
     found = [k for k in keywords if k in full]
     if found:
-        score += 15
+        score += 10
         reasons.append(f"Suspicious keywords: {', '.join(found)}")
 
-    # 7. Check URL shortener
-    shorteners = ["bit.ly", "tinyurl", "t.co", "goo.gl"]
-    if any(s in domain for s in shorteners):
-        score += 20
-        reasons.append("Uses URL shortener - hides destination")
+    # 5. TYPO-SQUATTING - هذا هو الإصلاح الجديد
+    clean = normalize(domain)
+    # شيل www. عشان المقارنة
+    clean_no_www = clean.replace("www.", "")
+    domain_no_www = domain.replace("www.", "")
 
-    # 8. Check typo squatting (fake google etc)
-    fakes = {"goggle": "google", "facebok": "facebook", "amazom": "amazon", "paypa1": "paypal"}
-    for fake, real in fakes.items():
-        if fake in domain:
-            score += 40
-            reasons.append(f"TYPO-SQUATTING! Looks like {real} but is {fake}")
+    for legit in LEGIT:
+        # اذا بعد التنظيف صار يساوي موقع حقيقي، بس الأصلي مختلف = مزور
+        if clean_no_www == legit and domain_no_www != legit:
+            score += 50
+            reasons.append(f"TYPO-SQUATTING! Looks like {legit} but is {domain}")
+            break
+        # اذا فيه اسم موقع حقيقي داخل دومين غريب
+        elif legit.split('.')[0] in domain_no_www and domain_no_www != legit and clean_no_www != legit:
+            # مثال: facebook-login.com
+            if domain_no_www != legit:
+                score += 20
+                reasons.append(f"Contains brand name {legit} in fake domain")
+                break
 
-    # Result
+    # 6. Long URL
+    if len(url) > 75:
+        score += 10
+        reasons.append("Very long URL")
+
     print(f"Risk Score: {score}/100")
-    print("\n[!] Reasons:")
-    if reasons:
+    print(f"\n[!] Reasons:")
+    if not reasons:
+        print(" - No issues found")
+    else:
         for r in reasons:
-            print(f"  - {r}")
-    else:
-        print("  - No suspicious signs found")
+            print(f" - {r}")
 
-    print("\n[RESULT]: ", end="")
-    if score >= 50:
-        print("🔴 PHISHING! DO NOT CLICK!")
-    elif score >= 25:
-        print("🟡 SUSPICIOUS - Be Careful!")
+    print("-" * 50)
+    if score >= 40:
+        print("[RESULT]: 🔴 PHISHING! DO NOT CLICK!")
+    elif score >= 20:
+        print("[RESULT]: 🟠 SUSPICIOUS - Be Careful!")
     else:
-        print("🟢 SAFE - Looks Legit")
+        print("[RESULT]: 🟢 SAFE - Looks Legit")
     print("-" * 50)
 
-print("=" * 50)
-print("🎣 PHISHING URL DETECTOR")
-print("=" * 50)
+print("="*50)
+print("🎣 Phishing URL Detector - SOC Analyst Project 4")
+print("="*50)
 
+# تجارب جاهزة
 tests = [
-    "https://www.google.com",
-    "http://192.168.1.1/login/verify-account-secure-free-win",
-    "http://google.com@evil.com/login",
-    "https://www.goggle.com/login",
-    "http://bit.ly/3xYz123",
     "https://www.paypa1.com/secure/login/update/account",
+    "faceb00k.com",
+    "https://google.com",
+    "https://faceb00k.com/login",
+    "http://192.168.1.1/login@paypal.com",
+    "https://amazon-secure-login.com"
 ]
 
-for u in tests:
-    check_url(u)
+for t in tests:
+    check_url(t)
 
 print("\nTry your own URL:")
-user_url = input("Enter URL to check (or Enter to skip): ")
-if user_url.strip():
-    check_url(user_url.strip())
+while True:
+    u = input("Enter URL to check (or Enter to skip): ")
+    if u.strip() == "":
+        break
+    check_url(u)
+
+print("Done! Bye 👋")
