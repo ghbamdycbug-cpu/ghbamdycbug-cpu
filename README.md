@@ -1,51 +1,40 @@
-# Hi there, I'm Ghbam 👋
 
-![SOC](https://img.shields.io/badge/SOC_ANALYST-00FF00?style=for-the-badge)
-![Python](https://img.shields.io/badge/PYTHON_93%25-3776AB?style=for-the-badge)
-![Bug](https://img.shields.io/badge/BUG_HUNTER-FF0000?style=for-the-badge)
-![Termux](https://img.shields.io/badge/BUILT_ON_TERMUX-000000?style=for-the-badge)
+<div align="center">
 
----
+# 👋 مرحباً، أنا غبام
+### 🛡️ SOC Analyst | Threat Hunter | Blue Team 🇾🇪
 
-## 👨‍💻 About Me
-- **Role:** SOC Analyst / Blue Team
-- **Location:** Yemen 🇾🇪
-- **Focus:** SOC Analyst / Blue Team
-- **Tools:** Termux, Git, GitHub, Linux
+[![Telegram](https://img.shields.io/badge/Telegram-@ghbam-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ghbam)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/967735688400)
+[![GitHub](https://img.shields.io/badge/GitHub-ghbam-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ghbamdycbug-cpu)
 
----
+![SOC Analyst](https://img.shields.io/badge/SOC-ANALYST-green?style=flat-square)
+![Python](https://img.shields.io/badge/PYTHON-93%25-blue?style=flat-square)
+![Bug Hunter](https://img.shields.io/badge/BUG-HUNTER-red?style=flat-square)
+![Built on Termux](https://img.shields.io/badge/BUILT_ON-TERMUX-black?style=flat-square)
 
-## 🛠️ Skills
-- Python
-- Linux
-- Bug Hunting
-- SOC Analysis
+</div>
 
 ---
 
-## 🚀 My Projects
+### 👨‍💻 نبذة عني
+- 🛡️ **محلل مركز عمليات الأمن السيبراني / الفريق الأزرق**
+- 📍 **الموقع:** اليمن 🇾🇪
+- 🎯 **التركيز:** مركز عمليات الأمن، الاستجابة للحوادث، صيد التهديدات
+- 🔥 **أحب:** صيد التهديدات، الاستجابة للحوادث، وتحليل السجلات
 
-### 1. 🛡️ SOC Log Analyzer
-اداة بايثون لتحليل سجلات السيرفر وكشف الهجمات
-- **Language:** Python
+### 🛠️ مهاراتي
+- **SIEM:** Splunk | ELK | Wazuh
+- **تحليل:** Logs | Network Traffic | Malware Basics
+- **أدوات:** Wireshark | Nmap | Termux | Linux
+- **لغات:** Python | Bash
 
-### 2. 🐍 Port Scanner
-اداة لفحص المنافذ المفتوحة في الشبكة
-- **Language:** Python
-
-### 3. 🔍 Bug Hunter Notes
-ملخصاتي وملاحظاتي في صيد الثغرات
-- **Focus:** Web Security
-
----
-
-## 📫 Connect With Me
-
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ghbam)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/967000000000)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ghbamdycbug-cpu)
-
-- **GitHub:** github.com/ghbamdycbug-cpu
-- **Location:** Yemen 🇾🇪
+### 📫 تواصل معي
+- **Telegram:** [@ghbam](https://t.me/ghbam)
+- **WhatsApp:** [اضغط هنا للمراسلة](https://wa.me/967735688400)
+- **GitHub:** [ghbamdycbug-cpu](https://github.com/ghbamdycbug-cpu)
 
 ---
+<div align="center">
+⭐ **إذا عجبك بروفايلي، سوي لي Follow!** ⭐
+</div>
