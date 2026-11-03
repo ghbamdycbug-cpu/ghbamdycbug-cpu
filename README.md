@@ -1,40 +1,43 @@
 
-<div align="center">
+# 🛡️ SOC - Security Operations Center Project
 
-# 👋 Hi, I'm Ghbam
-### 🛡️ SOC Analyst | Threat Hunter | Blue Team 🇾🇪
+### 🔍 My Personal SOC Toolkit - Built From Scratch on Termux (Android)!
 
-[![Telegram](https://img.shields.io/badge/Telegram-@ghbam-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ghbam)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/967735688400)
-[![GitHub](https://img.shields.io/badge/GitHub-ghbam-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ghbamdycbug-cpu)
+> A collection of 6 Python tools for log analysis, threat detection, and security auditing. Built for Blue Team / SOC Analyst workflow.
 
-![SOC](https://img.shields.io/badge/SOC-ANALYST-00FF00?style=flat-square&logo=shield&logoColor=black)
-![Python](https://img.shields.io/badge/PYTHON-93%25-blue?style=flat-square&logo=python)
-![Bug Hunter](https://img.shields.io/badge/BUG-HUNTER-red?style=flat-square&logo=bugcrowd)
-![Termux](https://img.shields.io/badge/BUILT_ON-TERMUX-black?style=flat-square&logo=android)
-
-</div>
+[Python](https://img.shields.io/badge/Python-93%25-3776AB?style=for-the-badge&logo=python&logoColor=white)
+[HTML](https://img.shields.io/badge/HTML-7%25-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+[SOC](https://img.shields.io/badge/SOC-ANALYST-00FF00?style=for-the-badge&logo=shield&logoColor=black)
+[Termux](https://img.shields.io/badge/BUILT_ON-TERMUX-black?style=for-the-badge&logo=android)
 
 ---
 
-### 👨‍💻 About Me
-- 🛡️ **SOC Analyst / Blue Team**
-- 📍 **Location:** Yemen 🇾🇪
-- 🎯 **Focus:** SOC, Incident Response, Threat Hunting
-- 🔥 **I Love:** Threat Hunting, Incident Response, Log Analysis
+## 🚀 Tools (6 Tools)
 
-### 🛠️ Skills
-- **SIEM:** Splunk | ELK | Wazuh
-- **Analysis:** Logs | Network Traffic | Malware Basics
-- **Tools:** Wireshark | Nmap | Termux | Linux
-- **Languages:** Python | Bash
-
-### 📫 Connect With Me
-- **Telegram:** [@ghbam](https://t.me/ghbam)
-- **WhatsApp:** [Click Here To Chat](https://wa.me/967735688400)
-- **GitHub:** [ghbamdycbug-cpu](https://github.com/ghbamdycbug-cpu)
+| # | Tool | What It Does |
+|---|------|--------------|
+| 1 | `log_analyzer.py` | Detects brute-force attacks from logs |
+| 2 | `port_scanner.py` | Scans open ports on target |
+| 3 | `password_checker.py` | Checks password strength + HaveIBeenPwned |
+| 4 | `hash_cracker.py` | Cracks MD5 hashes using wordlist |
+| 5 | `phishing_detector.py` | Detects phishing & typo-squatting domains |
+| 6 | `wifi_scanner.py` | Scans WiFi network for connected devices |
 
 ---
-<div align="center">
-⭐ **If you like my profile, give me a Follow!** ⭐
-</div>
+
+## 🔥 Real Fix!
+
+**I found a bug and fixed it myself:**
+
+- **Before:** `faceb00k.com` was detected as SAFE (10/100)
+- **After:** `faceb00k.com` is now detected as PHISHING (60/100) - TYPO-SQUATTING!
+
+---
+
+## 🛠️ How To Run
+
+```bash
+python log_analyzer.py
+python port_scanner.py
+python phishing_detector.py
+python wifi_scanner.py
