@@ -3,7 +3,7 @@
 
 ### 🔍 My Personal SOC Toolkit - Built From Scratch on Termux (Android)!
 
-> A collection of 6 Python tools for log analysis, threat detection, and security auditing. Built for Blue Team / SOC Analyst workflow.
+> A collection of 8 Python tools for log analysis, threat detection, and security auditing. Built for Blue Team / SOC Analyst workflow.
 
 [Python](https://img.shields.io/badge/Python-93%25-3776AB?style=for-the-badge&logo=python&logoColor=white)
 [HTML](https://img.shields.io/badge/HTML-7%25-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -12,7 +12,7 @@
 
 ---
 
-## 🚀 Tools (6 Tools)
+## 🚀 Tools (8 Tools)
 
 | # | Tool | What It Does |
 |---|------|--------------|
@@ -22,6 +22,8 @@
 | 4 | `hash_cracker.py` | Cracks MD5 hashes using wordlist |
 | 5 | `phishing_detector.py` | Detects phishing & typo-squatting domains |
 | 6 | `wifi_scanner.py` | Scans WiFi network for connected devices |
+| 7 | `link_checker.py` | Checks if a link is safe or malicious |
+| 8 | `log_filter.py` | Filters and cleans logs for analysis |
 
 ---
 
@@ -41,3 +43,5 @@ python log_analyzer.py
 python port_scanner.py
 python phishing_detector.py
 python wifi_scanner.py
+python link_checker.py
+python log_filter.py
