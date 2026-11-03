@@ -5,10 +5,10 @@
 
 > A collection of 8 Python tools for log analysis, threat detection, and security auditing. Built for Blue Team / SOC Analyst workflow.
 
-[Python](https://img.shields.io/badge/Python-93%25-3776AB?style=for-the-badge&logo=python&logoColor=white)
-[HTML](https://img.shields.io/badge/HTML-7%25-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-[SOC](https://img.shields.io/badge/SOC-ANALYST-00FF00?style=for-the-badge&logo=shield&logoColor=black)
-[Termux](https://img.shields.io/badge/BUILT_ON-TERMUX-black?style=for-the-badge&logo=android)
+![Python](https://img.shields.io/badge/Python-93%25-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-7%25-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![SOC](https://img.shields.io/badge/SOC-ANALYST-00FF00?style=for-the-badge&logo=shield&logoColor=black)
+![Termux](https://img.shields.io/badge/BUILT_ON-TERMUX-black?style=for-the-badge&logo=android)
 
 ---
 
