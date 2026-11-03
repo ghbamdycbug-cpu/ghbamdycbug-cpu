@@ -1,14 +1,13 @@
-
 # Hi there 👋 I'm Ghbam
 
 ### 🛡️ SOC Analyst | Threat Hunter | Blue Team | Bug Hunter 🇾🇪
 
 > Building my own SOC from scratch on Termux (Android) - No Kali, No PC, Just Python + Passion.
 
-[Python](https://img.shields.io/badge/Python-93%25-3776AB?style=for-the-badge&logo=python&logoColor=white)
-[HTML](https://img.shields.io/badge/HTML-7%25-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-[SOC](https://img.shields.io/badge/SOC-ANALYST-00FF00?style=for-the-badge&logo=shield&logoColor=black)
-[Termux](https://img.shields.io/badge/BUILT_ON-TERMUX-black?style=for-the-badge&logo=android)
+![Python](https://img.shields.io/badge/Python-93%25-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-7%25-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![SOC](https://img.shields.io/badge/SOC-ANALYST-00FF00?style=for-the-badge&logo=shield&logoColor=black)
+![Termux](https://img.shields.io/badge/BUILT_ON-TERMUX-black?style=for-the-badge&logo=android)
 
 ---
 
